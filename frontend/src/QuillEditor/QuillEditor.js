@@ -30,7 +30,7 @@ function QuillEditor() {
     setLoading(true);
 
     axios
-      .post("http://localhost:5555/chat", { prompt })
+      .post("/chat", { prompt })
       .then((res) => {
         setResponse(res.data);
         // split response into an array of words
