@@ -1,0 +1,36 @@
+.app-bar-logo{
+    width: 130px;
+}
+.app-bar{
+    background-color: #fff;
+    color: #333;
+}
+.appbar-action-btns{
+    width: 2rem;
+    height: 2rem;
+}
+.username-shortcut-txt{
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.item-active{
+    border-bottom: 2px solid #861DDD;
+}
+
+.nav-item{
+    border-bottom: 2px solid transparent;
+}
+.text-black{
+    color: #1D1B1E;
+}
+.reports-menu{
+    padding: 0 !important;
+    font-size: 16px !important;
+    font-weight: normal !important;
+    border-bottom: 2px solid transparent !important;
+    border-radius: 0 !important;
+}
+.reports-menu:hover, .reports-menu:active{
+    background-color: transparent !important;
+}

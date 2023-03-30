@@ -1,0 +1,32 @@
+.ql-editor {
+  height: calc(100vh - 300px);
+  overflow: scroll;
+  line-height: 1.75;
+  font-size: 18px;
+}
+.quill-card {
+  margin: 2rem 0;
+}
+
+.quill-card-content {
+  padding: 1rem !important;
+}
+
+.t-a-c {
+  text-align: center;
+}
+
+.m-b-15 {
+  margin-bottom: 1.5rem;
+}
+
+.d-flex {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  column-gap: 1rem;
+}
+
+/* .ql-editor.ql-blank::before {
+  color: rgb(231 231 231 / 60%);
+} */
