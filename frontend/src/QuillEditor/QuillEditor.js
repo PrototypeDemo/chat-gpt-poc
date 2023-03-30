@@ -4,7 +4,7 @@ import QuillEditorToolBar, {
   modules,
   formats,
 } from "../QuillEditorToolBar/QuillEditorToolBar";
-import "react-quill/dist/quill.snow.css";
+import "./QuillEditorSnow.css";
 
 import { Container } from "@mui/system";
 import Card from "@mui/material/Card";

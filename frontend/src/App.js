@@ -2,7 +2,6 @@ import { useState, useEffect } from "react";
 import "./App.css";
 import "@fontsource/roboto"; // Loading Roboto font. MUI was designed with this font in mind.
 import {
-  Switch,
   FormGroup,
   FormControlLabel,
   CssBaseline,
@@ -11,13 +10,42 @@ import {
   Toolbar,
   Typography,
   IconButton,
+  Tooltip,
 } from "@mui/material";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
 import MessageIcon from "@mui/icons-material/Message";
 import QuillEditor from "./QuillEditor/QuillEditor";
+import Footer from "./CommonComponents/Footer/Footer";
+import LightModeIcon from "@mui/icons-material/LightMode";
+import DarkModeIcon from "@mui/icons-material/DarkMode";
 
 // Define custom palette colors
 const customColors = {
+  primary: {
+    main: "#861DDD",
+  },
+  primaryLight: {
+    main: "#EDDDF6",
+  },
+  newprimary: {
+    main: "#FFFFFF",
+  },
+  secondary: {
+    main: "#665A6F",
+  },
+  error: {
+    main: "#ba1b1b",
+  },
+  charcoal: {
+    main: "#333333",
+  },
+  background: {
+    default: "#f9f9f9",
+  },
+};
+
+// Define custom palette colors
+const darkCustomColors = {
   primary: {
     main: "#861DDD",
   },
@@ -46,7 +74,7 @@ const light = createTheme({
 const dark = createTheme({
   palette: {
     mode: "dark",
-    ...customColors,
+    ...darkCustomColors,
   },
 });
 
@@ -57,7 +85,7 @@ const App = () => {
   );
 
   // This function is triggered when the Switch component is toggled
-  const changeTheme = () => {
+  const toggleTheme = () => {
     setIsDarkTheme(!isDarkTheme);
   };
 
@@ -66,6 +94,18 @@ const App = () => {
     localStorage.setItem("isDarkTheme", isDarkTheme);
   }, [isDarkTheme]);
 
+  // const [isDarkTheme, setIsDarkTheme] = useState(
+  //   localStorage.getItem("isDarkTheme") === "true"
+  // );
+
+  // const toggleTheme = () => {
+  //   setIsDarkTheme(!isDarkTheme);
+  // };
+
+  // useEffect(() => {
+  //   localStorage.setItem("isDarkTheme", isDarkTheme);
+  // }, [isDarkTheme]);
+
   return (
     <ThemeProvider theme={isDarkTheme ? dark : light}>
       <CssBaseline />
@@ -73,7 +113,7 @@ const App = () => {
       <div className="App">
         <Box>
           <AppBar position="static">
-            <Toolbar color="primary">
+            <Toolbar color="newprimary">
               <IconButton
                 size="large"
                 edge="start"
@@ -83,19 +123,39 @@ const App = () => {
               >
                 <MessageIcon />
               </IconButton>
-              <Typography variant="h6">ChatGPT-POC</Typography>
-              <FormGroup className="theme-btn">
+              <Typography variant="h6" className="logo-text">
+                ChatGPT-POC
+              </Typography>
+              {/* <FormGroup className="theme-btn">
                 <FormControlLabel
                   control={
                     <Switch checked={isDarkTheme} onChange={changeTheme} />
                   }
                   label="Dark Theme"
                 />
+              </FormGroup> */}
+
+              <FormGroup className="theme-btn">
+                <FormControlLabel
+                  control={
+                    isDarkTheme ? (
+                      <Tooltip title="Light Theme">
+                        <LightModeIcon onClick={toggleTheme} />
+                      </Tooltip>
+                    ) : (
+                      <Tooltip title="Dark Theme">
+                        <DarkModeIcon onClick={toggleTheme} />
+                      </Tooltip>
+                    )
+                  }
+                  // label={isDarkTheme ? "Light Theme" : "Dark Theme"}
+                />
               </FormGroup>
             </Toolbar>
           </AppBar>
         </Box>
         <QuillEditor />
+        <Footer />
       </div>
     </ThemeProvider>
   );

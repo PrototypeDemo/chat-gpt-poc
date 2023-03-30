@@ -1,5 +1,5 @@
 .ql-editor {
-  height: calc(100vh - 300px);
+  height: calc(100vh - 340px);
   overflow: scroll;
   line-height: 1.75;
   font-size: 18px;
@@ -30,3 +30,25 @@
 /* .ql-editor.ql-blank::before {
   color: rgb(231 231 231 / 60%);
 } */
+@keyframes ellipsis {
+  0% {
+    content: "";
+  }
+  33% {
+    content: ".";
+  }
+  66% {
+    content: "..";
+  }
+  100% {
+    content: "...";
+  }
+}
+
+.ellipsis {
+  display: inline-block;
+  white-space: nowrap;
+  overflow: hidden;
+  width: 1em;
+  animation: ellipsis 1s infinite;
+}
