@@ -1,6 +1,5 @@
 {
   "name": "chat-gpt-poc",
-  "proxy": "https://chat-gpt-wla0.onrender.com:5555",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
