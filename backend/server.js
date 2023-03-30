@@ -29,6 +29,9 @@ app.post("/chat", async (req, res) => {
   res.send(completion.data.choices[0].text);
 });
 // 'prompt' is coming from axios post - from react js state - its input field value or query or question
+app.get("/health", async (req, res) => {
+  res.send("working");
+});
 
 // Start the server ////////////////////
 
