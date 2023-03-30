@@ -60,7 +60,7 @@ function QuillEditor() {
           <form onSubmit={handleSubmit}>
             <div className="m-b-15">
               <TextField
-                label="Write your question here and click send icon"
+                label="Ask me anything! ☺️"
                 placeholder="Enter your question..."
                 multiline
                 fullWidth
