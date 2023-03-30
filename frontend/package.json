@@ -1,6 +1,5 @@
 {
   "name": "chat-gpt-poc",
-  "proxy": "http://localhost:5555",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
